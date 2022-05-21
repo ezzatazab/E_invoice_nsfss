@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include e_invoice_nsfss *.css
+recursive-include e_invoice_nsfss *.csv
+recursive-include e_invoice_nsfss *.html
+recursive-include e_invoice_nsfss *.ico
+recursive-include e_invoice_nsfss *.js
+recursive-include e_invoice_nsfss *.json
+recursive-include e_invoice_nsfss *.md
+recursive-include e_invoice_nsfss *.png
+recursive-include e_invoice_nsfss *.py
+recursive-include e_invoice_nsfss *.svg
+recursive-include e_invoice_nsfss *.txt
+recursive-exclude e_invoice_nsfss *.pyc
