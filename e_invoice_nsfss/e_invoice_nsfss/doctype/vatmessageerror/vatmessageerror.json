@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-28 18:09:50.670091",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id",
+  "vatmessageid",
+  "message",
+  "target",
+  "propertypath"
+ ],
+ "fields": [
+  {
+   "fieldname": "id",
+   "fieldtype": "Int",
+   "label": "ID"
+  },
+  {
+   "fieldname": "vatmessageid",
+   "fieldtype": "Int",
+   "label": "VATMessageID"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Int",
+   "label": "Message"
+  },
+  {
+   "fieldname": "target",
+   "fieldtype": "Data",
+   "label": "Target"
+  },
+  {
+   "fieldname": "propertypath",
+   "fieldtype": "Data",
+   "label": "PropertyPath"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-28 18:17:08.507338",
+ "modified_by": "Administrator",
+ "module": "E Invoice Nsfss",
+ "name": "VATMessageError",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

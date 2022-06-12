@@ -1,0 +1,406 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-05-21 17:54:59.996715",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "salesinvoice",
+  "amended_from",
+  "storeid",
+  "column_break",
+  "id",
+  "code",
+  "invoicedate",
+  "sc_br",
+  "documenttype",
+  "uuidref",
+  "sendstatus",
+  "sc_br5",
+  "customer",
+  "company",
+  "section_break",
+  "dealertaxnumber",
+  "dealercountry",
+  "dealergovernate",
+  "dealerzone",
+  "col_1",
+  "dealername",
+  "dealertype",
+  "dealerstreet",
+  "dealerbuildingnumber",
+  "sc_br2",
+  "invoicevatdetails",
+  "sc_br3",
+  "total",
+  "net",
+  "vat",
+  "col_br01",
+  "tax",
+  "taxpercentage",
+  "vatpercentage",
+  "netwithoutvat",
+  "sc_br4",
+  "notes",
+  "currencyid",
+  "localcurrencynet",
+  "invoiceexchangerate",
+  "taxvat",
+  "col_br14",
+  "country",
+  "arabicname",
+  "zone",
+  "governate",
+  "col_32",
+  "buildingnumber",
+  "stname",
+  "postalcode"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "sales invoice number",
+   "options": "e-inv",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "InvoiceVat",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "salesinvoice.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": " customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoicevatdetails",
+   "fieldtype": "Table",
+   "label": "InvoiceVatDetails",
+   "options": "InvoiceVatDetail",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "salesinvoice.posting_date",
+   "fetch_if_empty": 1,
+   "fieldname": "invoicedate",
+   "fieldtype": "Date",
+   "label": "invoicedate",
+   "options": "Today",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salesinvoice",
+   "fieldtype": "Link",
+   "label": "salesinvoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "code"
+  },
+  {
+   "fieldname": "storeid",
+   "fieldtype": "Data",
+   "label": "storeid"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break",
+   "fieldtype": "Section Break",
+   "label": "customer Details"
+  },
+  {
+   "default": "cost",
+   "fetch_from": "customer.dealercountry",
+   "fetch_if_empty": 1,
+   "fieldname": "dealercountry",
+   "fieldtype": "Data",
+   "label": "dealercountry"
+  },
+  {
+   "fieldname": "sc_br",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sc_br2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "customer.dealergovernate",
+   "fetch_if_empty": 1,
+   "fieldname": "dealergovernate",
+   "fieldtype": "Data",
+   "label": "dealergovernate"
+  },
+  {
+   "fetch_from": "customer.dealerzone",
+   "fetch_if_empty": 1,
+   "fieldname": "dealerzone",
+   "fieldtype": "Data",
+   "label": "dealerzone"
+  },
+  {
+   "fetch_from": "customer.dealerstreet",
+   "fetch_if_empty": 1,
+   "fieldname": "dealerstreet",
+   "fieldtype": "Data",
+   "label": "dealerstreet"
+  },
+  {
+   "fetch_from": "customer.dealerbuildingnumber",
+   "fetch_if_empty": 1,
+   "fieldname": "dealerbuildingnumber",
+   "fieldtype": "Data",
+   "label": "dealerbuildingnumber"
+  },
+  {
+   "fetch_from": "customer.tax_id",
+   "fetch_if_empty": 1,
+   "fieldname": "dealertaxnumber",
+   "fieldtype": "Data",
+   "label": "dealertaxnumber",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.dealername",
+   "fetch_if_empty": 1,
+   "fieldname": "dealername",
+   "fieldtype": "Data",
+   "label": "dealername"
+  },
+  {
+   "fetch_from": "customer.dealertype",
+   "fetch_if_empty": 1,
+   "fieldname": "dealertype",
+   "fieldtype": "Data",
+   "label": "dealertype"
+  },
+  {
+   "fieldname": "col_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sc_br5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documenttype",
+   "fieldtype": "Data",
+   "label": "documenttype"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sendstatus",
+   "fieldtype": "Int",
+   "label": "sendstatus"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "uuidref",
+   "fieldtype": "Data",
+   "label": "number on porter"
+  },
+  {
+   "fieldname": "sc_br3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sc_br4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes"
+  },
+  {
+   "fetch_from": "Sales Invoice.price_list_currency",
+   "fieldname": "currencyid",
+   "fieldtype": "Data",
+   "label": "CurrencyId"
+  },
+  {
+   "fieldname": "localcurrencynet",
+   "fieldtype": "Currency",
+   "label": "LocalCurrencyNet"
+  },
+  {
+   "fetch_from": "Sales Invoice.conversion_rate",
+   "fetch_if_empty": 1,
+   "fieldname": "invoiceexchangerate",
+   "fieldtype": "Float",
+   "label": "InvoiceExchangeRate"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.arabicname",
+   "fieldname": "arabicname",
+   "fieldtype": "Data",
+   "label": "ArabicName "
+  },
+  {
+   "default": "674743482",
+   "depends_on": "company",
+   "fetch_from": "comapany.tax_id",
+   "fieldname": "taxvat",
+   "fieldtype": "Data",
+   "label": "TaxVat"
+  },
+  {
+   "default": "EG",
+   "depends_on": "company",
+   "fetch_from": "Company.country1",
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.zone",
+   "fieldname": "zone",
+   "fieldtype": "Data",
+   "label": "Zone"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.governate",
+   "fieldname": "governate",
+   "fieldtype": "Data",
+   "label": "Governate"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.buildingnumber",
+   "fieldname": "buildingnumber",
+   "fieldtype": "Data",
+   "label": "BuildingNumber"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.stname",
+   "fieldname": "stname",
+   "fieldtype": "Data",
+   "label": "StName"
+  },
+  {
+   "depends_on": "company",
+   "fetch_from": "company.postalcode",
+   "fieldname": "postalcode",
+   "fieldtype": "Data",
+   "label": "PostalCode"
+  },
+  {
+   "fieldname": "col_br14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "net",
+   "fieldtype": "Currency",
+   "label": "Net"
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Currency",
+   "label": "VAT"
+  },
+  {
+   "fieldname": "col_br01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax"
+  },
+  {
+   "fieldname": "taxpercentage",
+   "fieldtype": "Percent",
+   "label": "TaxPercentage"
+  },
+  {
+   "fieldname": "vatpercentage",
+   "fieldtype": "Percent",
+   "label": "VatPercentage"
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "ID",
+   "length": 5,
+   "non_negative": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "salesinvoice.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "depends_on": "company",
+   "fieldname": "col_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "netwithoutvat",
+   "fieldtype": "Currency",
+   "label": "NetWithoutVAT"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-28 19:42:49.565762",
+ "modified_by": "Administrator",
+ "module": "E Invoice Nsfss",
+ "name": "InvoiceVat",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
