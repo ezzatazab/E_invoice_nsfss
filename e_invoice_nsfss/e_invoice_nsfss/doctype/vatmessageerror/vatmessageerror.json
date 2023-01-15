@@ -25,7 +25,7 @@
   },
   {
    "fieldname": "message",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Message"
   },
   {
@@ -42,7 +42,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-05-28 18:17:08.507338",
+ "modified": "2022-06-22 10:50:48.563291",
  "modified_by": "Administrator",
  "module": "E Invoice Nsfss",
  "name": "VATMessageError",
